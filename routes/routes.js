@@ -20,7 +20,7 @@ var appRouter = function(app) {
     var num = req.params.num;
  
     if (isFinite(num) && num  > 0 ) {
-      for (i = 0; i <= num-1; i++) {
+      for (var i = 0; i <= num-1; i++) {
         users.push({
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
