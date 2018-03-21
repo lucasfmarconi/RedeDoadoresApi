@@ -24,5 +24,17 @@
   "bugs": {
     "url": "https://github.com/lucasfmarconi/RedeDoadoresApi/issues"
   },
-  "homepage": "https://github.com/lucasfmarconi/RedeDoadoresApi#readme"
+  "homepage": "https://github.com/lucasfmarconi/RedeDoadoresApi#readme",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "semi": 2
+    }
+  }
 }
