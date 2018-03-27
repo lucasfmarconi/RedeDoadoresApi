@@ -1,14 +1,14 @@
 const { Client } = require('pg');
 const dbConfig = require('../config/dbConfig');
-const client = new Client(dbConfig);
+const dbClient = new Client(dbConfig);
 var Promise = require('promise');
 
-client.connect();
+dbClient.connect();
 
 var pgDb = {
-    clientSelect: function (query, param) {
+    necessidadeSelect: function (query, param) {
         return new Promise(function (fulfill, reject) {
-            client.query(query, (err, res) => {
+            dbClient.query(query, (err, res) => {
                 if(err){
                     console.log(err);
                     reject(err);                    
@@ -20,7 +20,21 @@ var pgDb = {
             });
         });
     },
-    openConnection : function () { client.connect(); }
+    insertNecessidade: function(query, param) {
+        return new Promise(function (fulfill, reject) {
+            dbClient.query(query, (err, res) => {
+                if(err){
+                    console.log(err);
+                    reject(err);                    
+                } else {
+                    console.log(query);
+                    console.log("Rows affected: " + res.rowCount);
+                    fulfill(res);
+                }
+            });
+        });
+    },
+    openConnection : function () { dbClient.connect(); }
 };
 
 // process.on('uncaughtException', function (err) {
