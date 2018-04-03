@@ -1,7 +1,10 @@
-var db = require("../../db/pgDb");
+var db = require("../../db/postgres/index");
 
-async function getNecessidades() {
+async function get() {
     return await db.clientSelect(`SELECT id, descricao, nome, tipo_sanguineo, hospital FROM public.rdapi_necessidade`);
 }
 
-module.exports.getNecessidades = getNecessidades;
+module.exports = {
+    get = get,
+    post = post
+} 
