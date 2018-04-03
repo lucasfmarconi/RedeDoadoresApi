@@ -17,6 +17,10 @@ var logger = function (req, res, next) {
   debug(req.method + ' ' + req.url);
 }
 
+var swaggerUi = require('swagger-ui-express');
+var swaggerDocument = require('./swagger.json');
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(logger);
 app.use('/api', apiApp);
 
