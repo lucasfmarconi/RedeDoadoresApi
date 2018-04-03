@@ -3,7 +3,6 @@ var bodyParser = require("body-parser");
 var routes = require("./routes/index");
 var apiApp = express();
 var app = express();
-var openRouter = express.Router();
 var debug = require("./config/debugConfig");
 
 apiApp.use(bodyParser.json());
@@ -17,12 +16,14 @@ var logger = function (req, res, next) {
   debug(req.method + ' ' + req.url);
 }
 
-var swaggerUi = require('swagger-ui-express');
-var swaggerDocument = require('./swagger.json');
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+var express = require("express")
+ , url = require("url")
+ , swagger = require("swagger-node-express");
 
-app.use(logger);
-app.use('/api', apiApp);
+ 
+ app.use(logger);
+ app.use('/api', apiApp);
+ swagger.setAppHandler(app);
 
 var server = app.listen('3000', function () {
   debug("API running on port.", server.address().port);
