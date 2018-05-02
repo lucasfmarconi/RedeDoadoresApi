@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var routes = require("./routes/routes.js");
 var necessidadeRoutes = require("./routes/necessidade.js");
 var swagger = require("swagger-node-express");
 var app = express();
@@ -26,7 +25,6 @@ swagger.addValidator(
 );
 
 swagger.setAppHandler(app);
-routes(app);
 necessidadeRoutes(app);
 
 var server = app.listen(3000, function() {

@@ -12,13 +12,10 @@ async function getNecessidade() {
 
 module.exports.getNecessidade = getNecessidade;
 
-async function postNecessidade() {
-    var retorno = await dal.postNecessidade();
-    if (retorno.rowCount > 0)
-        return retorno.rows;
-    else {
-        Console.log(retorno);
-    }
+async function postNecessidade(req) {
+    var necessidade = req.body.data;
+    var retorno = await dal.postNecessidade(necessidade);
+    return retorno;
 }
 
 module.exports.postNecessidade = postNecessidade;

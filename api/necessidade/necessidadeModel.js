@@ -1,10 +1,12 @@
-function Necessidade(id, descricao, nome, tipo_sanguineo, hospital) {
+function Necessidade(id, descricao, nome, tipo_sanguineo, unidade, municipio, estado) {
     return {
         id: id,
-        descricao: descricao,
         nome: nome,
         tipo_sanguineo: tipo_sanguineo,
-        hospital: hospital
+        descricao: descricao,
+        unidade: unidade,
+        municipio: municipio,
+        estado: estado
     };
 }
 
