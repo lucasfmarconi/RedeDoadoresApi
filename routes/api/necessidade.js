@@ -1,4 +1,4 @@
-var necessidade = require("../api/necessidade/necessidadeLogic");
+var necessidade = require("../api/necessidade/index");
 
 var appRouter = function (app) {
     

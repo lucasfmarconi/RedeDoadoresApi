@@ -1,5 +1,5 @@
-var dal = require("./necessidadeDAL");
-var model = require("./necessidadeModel");
+var dal = require("./data");
+var model = require("./model");
 
 async function getNecessidade() {
     var retorno = await dal.getNecessidade();
