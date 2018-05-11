@@ -1,4 +1,4 @@
-var dbConfig = require("../config/cloudantConfig");
+var dbConfig = require("../../config/cloudantConfig");
 var Cloudant = require("cloudant");
 var request = require("request");
 var Promise = require("promise");

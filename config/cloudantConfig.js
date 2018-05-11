@@ -1,3 +1,8 @@
+// if (!process.env.CLOUDANT_URL) {
+//     console.error("Please put the URL of your Cloudant instance in an environment variable 'CLOUDANT_URL'");
+//     process.exit(1);
+// }
+
 var dbNecessidadeConfig = {
     user: 'ithiscruslebysiblyesewas	',
     host: 'https://1bdefb1a-b263-426d-a330-b68e5434e175-bluemix.cloudant.com/',
