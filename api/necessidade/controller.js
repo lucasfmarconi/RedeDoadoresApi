@@ -3,10 +3,10 @@ var model = require("./model");
 
 async function getNecessidade() {
     var retorno = await dal.getNecessidade();
-    if (retorno.rowCount > 0)
+    if (retorno.rows.length > 0)
         return retorno.rows;
     else {
-        Console.log(retorno);
+        console.log(retorno);
     }
 }
 
