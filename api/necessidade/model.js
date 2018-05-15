@@ -1,6 +1,6 @@
-function Necessidade(id, descricao, nome, tipo_sanguineo, unidade, municipio, estado) {
+module.exports = function (id, descricao, nome, tipo_sanguineo, unidade, municipio, estado) {
     return {
-        id: id,
+        _id: id,
         nome: nome,
         tipo_sanguineo: tipo_sanguineo,
         descricao: descricao,
@@ -9,5 +9,3 @@ function Necessidade(id, descricao, nome, tipo_sanguineo, unidade, municipio, es
         estado: estado
     };
 }
-
-module.exports.Necessidade = Necessidade;

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@cloudant/cloudant": "^2.2.0",
     "body-parser": "^1.18.2",
-    "cloudant": "^1.10.0-NOTICE",
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "pg": "^7.4.1",
